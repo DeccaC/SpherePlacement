@@ -11,10 +11,10 @@ public class PointsPlacer : MonoBehaviour {
     }
 
     public DistributionType distribution;
-    public int n = 8;
-    public float radius = 8;
+    public int n = 9999;
+    public float radius = 100;
     public Transform prefab;
-
+    public int i = 1000;
     private System.Func<int, Vector3>[] distFuncs => new System.Func<int, Vector3>[] {
         Linear,
         Rand,
@@ -22,7 +22,7 @@ public class PointsPlacer : MonoBehaviour {
         FibSphere,
     };
 
-    private Vector3 Linear(int i) {
+  private Vector3 Linear(int i) {
         return Vector3.right * i * radius;
     }
 
@@ -41,7 +41,7 @@ public class PointsPlacer : MonoBehaviour {
 
         return new Vector3(x, y, 0);
     }
-
+ 
     private Vector3 FibSphere(int i) {
         var k = i + .5f;
 
